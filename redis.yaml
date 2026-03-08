@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: redis-pod
+  labels:
+    when: kodekloud-practice-lab
+spec:
+  containers:
+  # once you run the wrong image name file
+  # image pull error come
+  # either you can manually update the file via vim and run kubectl apply -f filepath
+  # or
+  # you can use kubectl edit pod my-pod, and once saved it auto runs
+  # - name : redis123
+  - name: redis
+    image: redis
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
