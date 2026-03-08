@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-2
+  labels:
+    # labels can be anything, no restricted keys, kuch bhi, tumhari marzi
+    env: production
+    type: frontend
+  
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx
+      # vs code is showing error to add below properties,
+      # not in kodekloud lecture,
+      # idk at the moment what are they so just adding them
+      resources:
+        requests:
+          memory: "64Mi"
+          cpu: "250m"
+        limits:
+          memory: "128Mi"
+          cpu: "500m"
